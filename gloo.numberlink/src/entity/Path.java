@@ -2,12 +2,19 @@ package entity;
 
 public class Path {
 	
-	private Cell[] path;
-	private Tag t;
+	private Cell[] cells;
+	private int indNext = 0;
+	private final static int TAILLE_MAX = 30;
+	private Tag tag;
 
-	public Path(Cell c) {
-		Cell[] pc = {c};
-		this.path = pc;
+	public Path(Tag tag) {
+		cells = new Cell[TAILLE_MAX];
+		this.tag = tag;
+	}
+	
+	public void addCell(Cell cell) {
+		cells[indNext] = cell;
+		indNext++;
 	}
 
 }

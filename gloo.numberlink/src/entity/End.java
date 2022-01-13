@@ -1,10 +1,11 @@
 package entity;
 
-public class End extends Cell {
+public class End {
 	
-	private Tag t;
+	private Tag tag;
+	private Cell cell;
 	
-	public End() {
+	public Path createNewPath() {
+		return tag.createNewPath();
 	}
-
 }
