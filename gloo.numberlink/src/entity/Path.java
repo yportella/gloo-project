@@ -16,5 +16,18 @@ public class Path {
 		cells[indNext] = cell;
 		indNext++;
 	}
+	
+	public boolean advance(Direction dir) {
+		Cell last = this.getLastCell();
+		Cell neighbor = last.getNeighbor(dir);
+		if (neighbor.accept(this)) {
+			this.addCell(neighbor);
+		}
+	}
+	
+	private Cell getLastCell() {
+		return(this.cells[indNext-1]);
+	}
+	
 
 }
