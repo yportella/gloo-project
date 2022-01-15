@@ -8,4 +8,8 @@ public class End {
 	public Path createNewPath() {
 		return tag.createNewPath();
 	}
+	
+	public boolean sameTag(Tag t) {
+		return tag.equals(t);
+	}
 }

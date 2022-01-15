@@ -29,5 +29,8 @@ public class Path {
 		return(this.cells[indNext-1]);
 	}
 	
+	public Tag getTag() {
+		return tag;
+	}
 
 }

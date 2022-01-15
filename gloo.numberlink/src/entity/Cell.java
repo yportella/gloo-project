@@ -14,6 +14,13 @@ public class Cell {
 		this.column = column;
 	}
 	
+	public Cell(Grid grid, int line, int column, End end) {
+		this.grid = grid;
+		this.line = line;
+		this.column = column;
+		this.end = end;
+	}
+	
 	public int getLine() {
 		return line;
 	}
@@ -34,7 +41,14 @@ public class Cell {
 	}
 	
 	public boolean accept(Path p) {
-		return (path == null)&&(end == null);
+		if (end == null){
+			return (path == null)
+		} else {
+			Tag tag = p.getTag();
+			if (end.sameTag(tag)) {
+				return true
+			}
+		}
 	}
 	
 	public boolean hasPath() {

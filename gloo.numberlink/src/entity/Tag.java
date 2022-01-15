@@ -14,5 +14,9 @@ public class Tag {
 		Path path = new Path(this);
 		return path;
 	}
+	
+	public boolean equals(Tag t) {
+		return (id == t.id)
+	}
 
 }
