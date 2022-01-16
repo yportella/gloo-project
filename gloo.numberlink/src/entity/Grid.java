@@ -47,6 +47,7 @@ public class Grid {
 			}
 		catch (Exception e) {
 			System.out.println("Case en dehors de la grille");
+			return null;
 		}
 	}
 	

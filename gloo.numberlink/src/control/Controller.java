@@ -1,5 +1,9 @@
 package control;
 
+import entity.Grid;
+import entity.Path;
+import entity.Direction;
+
 public class Controller implements IController {
 	
 	private Grid grid;
@@ -11,7 +15,7 @@ public class Controller implements IController {
 			Path path = grid.createNewPath(line, column);
 			currentPath = path;
 			return true;
-		} catch {
+		} catch (Exception e) {
 			return false;
 		}
 	}
@@ -22,5 +26,41 @@ public class Controller implements IController {
 		boolean res = grid.isFinished();
 		return res;
     }
+
+	@Override
+	public int getNbLines() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getNbColumns() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getNbTags() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int[] getStartPathPosition(int tag) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int[] getSecondEndPosition(int tag) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Direction[] getDirections(int tag) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

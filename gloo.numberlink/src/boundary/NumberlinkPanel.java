@@ -11,8 +11,8 @@ import java.util.Arrays;
 
 import javax.swing.JPanel;
 
-import numberlink.control.Direction;
-import numberlink.control.IController;
+import entity.Direction;
+import control.IController;
 
 /**
  * Panneau de l'IHM pour le jeu Numberlink

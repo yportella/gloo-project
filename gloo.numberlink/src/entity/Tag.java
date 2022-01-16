@@ -16,7 +16,7 @@ public class Tag {
 	}
 	
 	public boolean equals(Tag t) {
-		return (id == t.id)
+		return (id == t.id);
 	}
 
 }

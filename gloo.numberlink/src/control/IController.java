@@ -1,5 +1,7 @@
 package control;
 
+import entity.Direction;
+
 
 /*
  * **********************

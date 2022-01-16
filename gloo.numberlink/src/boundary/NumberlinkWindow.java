@@ -7,8 +7,8 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import numberlink.control.Direction;
-import numberlink.control.IController;
+import entity.Direction;
+import control.IController;
 
 /**
  * Fenêtre de l'IHM pour le jeu Numberlink
