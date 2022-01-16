@@ -20,13 +20,15 @@ public class Path {
 	public boolean advance(Direction dir) {
 		Cell last = this.getLastCell();
 		Cell neighbor = last.getNeighbor(dir);
-		if (neighbor.accept(this)) {
+		boolean res = neighbor.accept(this);
+		if (res) {
 			this.addCell(neighbor);
 		}
+		return res;
 	}
 	
 	private Cell getLastCell() {
-		return(this.cells[indNext-1]);
+		return this.cells[indNext-1];
 	}
 	
 	public Tag getTag() {

@@ -21,6 +21,10 @@ public class Cell {
 		this.end = end;
 	}
 	
+	public Grid getGrid() {
+		return grid;
+	}
+	
 	public int getLine() {
 		return line;
 	}
@@ -37,21 +41,19 @@ public class Cell {
 	}
 	
 	public Cell getNeighbor(Direction dir) {
-		grid.getNeighbor(this, dir);
+		return grid.getNeighbor(this, dir);
 	}
 	
 	public boolean accept(Path p) {
 		if (end == null){
-			return (path == null)
+			return (path == null);
 		} else {
 			Tag tag = p.getTag();
-			if (end.sameTag(tag)) {
-				return true
-			}
+			return end.sameTag(tag);
 		}
 	}
 	
 	public boolean hasPath() {
-		return (path != null)
+		return (path != null);
 	}
 }
