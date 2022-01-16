@@ -61,5 +61,13 @@ public class Grid {
 		}
 		return true;
 	}
+	
+	public int getNbLines() {
+		return nbLines;
+	}
+
+    public int getNbColumns() {
+    	return nbColumns;
+    }
 
 }
