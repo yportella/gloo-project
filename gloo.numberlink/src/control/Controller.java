@@ -9,6 +9,10 @@ public class Controller implements IController {
 	private Grid grid;
 	private Path currentPath;
 	
+	public Controller(Grid grid) {
+		this.grid = grid;
+	}
+	
 	@Override
 	public boolean clickCell(int line, int column) {
 		try {
@@ -16,7 +20,8 @@ public class Controller implements IController {
 			currentPath = path;
 			return true;
 		} catch (Exception e) {
-			return false;
+			currentPath = grid.getCellPath(line, column);
+			return true;
 		}
 	}
 
@@ -29,38 +34,53 @@ public class Controller implements IController {
 
 	@Override
 	public int getNbLines() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+		return grid.getNbLines();
+		}
 
 	@Override
 	public int getNbColumns() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	    return grid.getNbColumns();
+	    }
 
 	@Override
 	public int getNbTags() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	    return 1;
+	    }
 
 	@Override
-	public int[] getStartPathPosition(int tag) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public int[] getStartPathPosition( int tag ) {
+	    return switch( tag ) {
+	        case 0 -> new int[] { 0, 0 };
+	        case 1 -> new int[] { 1, 4 };
+	        case 2 -> new int[] { 1, 2 };
+	        case 3 -> new int[] { 0, 2 };
+	        case 4 -> new int[] { 0, 4 };
+	        default -> null;
+	        };
+	    }
 
 	@Override
-	public int[] getSecondEndPosition(int tag) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public int[] getSecondEndPosition( int tag ) {
+	    return switch( tag ) {
+	        case 0 -> new int[] { 1, 1 };
+	        case 1 -> new int[] { 4, 3 };
+	        case 2 -> new int[] { 4, 2 };
+	        case 3 -> new int[] { 3, 1 };
+	        case 4 -> new int[] { 3, 3 };
+	        default -> null;
+	        };
+	    }
 
 	@Override
-	public Direction[] getDirections(int tag) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public Direction[] getDirections( int tag ) {
+	    return switch( tag ) {
+	        case 0 -> new Direction[] {};
+	        case 1 -> new Direction[] { Direction.DOWN, Direction.DOWN, Direction.DOWN };
+	        case 2 -> new Direction[] { Direction.DOWN, Direction.DOWN };
+	        case 3 -> new Direction[] { Direction.LEFT };
+	        case 4 -> new Direction[] { Direction.LEFT, Direction.DOWN, Direction.DOWN };
+	        default -> null;
+	        };
+	    }
 
 }

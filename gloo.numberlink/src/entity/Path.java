@@ -20,7 +20,13 @@ public class Path {
 	public boolean advance(Direction dir) {
 		Cell last = this.getLastCell();
 		Cell neighbor = last.getNeighbor(dir);
-		boolean res = neighbor.accept(this);
+		boolean res;
+		try {
+			res = neighbor.accept(this);
+			}
+		catch (Exception e){
+			res = false;
+		}
 		if (res) {
 			this.addCell(neighbor);
 		}

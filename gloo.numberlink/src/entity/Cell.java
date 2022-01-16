@@ -33,6 +33,10 @@ public class Cell {
 		return column;
 	}
 	
+	public Path getPath() {
+		return path;
+	}
+	
 	public Path createNewPath() {
 		Path newPath = end.createNewPath();
 		newPath.addCell(this);
@@ -54,6 +58,10 @@ public class Cell {
 	}
 	
 	public boolean hasPath() {
-		return (path != null);
+		return !(path == null);
+	}
+	
+	public void setEnd(End end) {
+		this.end = end;
 	}
 }

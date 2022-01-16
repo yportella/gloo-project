@@ -6,8 +6,13 @@ public class Tag {
 	private End e2;
 	private int id;
 
-	public Tag() {
-		// TODO Auto-generated constructor stub
+	public Tag(int id) {
+		this.id = id;
+	}
+	
+	public void setEnds(End e1, End e2) {
+		this.e1 = e1;
+		this.e2 = e2;
 	}
 	
 	public Path createNewPath() {

@@ -70,5 +70,13 @@ public class Grid {
     public int getNbColumns() {
     	return nbColumns;
     }
+    
+    public Path getCellPath(int indLine, int indColumn) {
+    	return cells[indLine][indColumn].getPath();
+    }
+    
+    public void setCells(Cell[][] cells) {
+    	this.cells = cells;
+    }
 
 }
