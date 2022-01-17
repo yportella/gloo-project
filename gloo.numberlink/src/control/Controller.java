@@ -87,15 +87,7 @@ public class Controller implements IController {
 
 	@Override
 	public Direction[] getDirections( int tag ) {
-	    return switch( tag ) {
-	        case 0 -> new Direction[] {};
-	        case 1 -> new Direction[] {};
-	        case 2 -> new Direction[] {};
-	        case 3 -> new Direction[] {};
-	        case 4 -> new Direction[] {};
-	        case 5   -> new Direction[] {};
-	        default -> null;
-	        };
-	    }
+	    return grid.getDirections(tag);
+	}
 
 }

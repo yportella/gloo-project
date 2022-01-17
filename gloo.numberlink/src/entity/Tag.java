@@ -5,6 +5,7 @@ public class Tag {
 	private End e1;
 	private End e2;
 	private int id;
+	private Path path;
 
 	public Tag(int id) {
 		this.id = id;
@@ -17,6 +18,7 @@ public class Tag {
 	
 	public Path createNewPath() {
 		Path path = new Path(this);
+		this.path = path;
 		return path;
 	}
 	
