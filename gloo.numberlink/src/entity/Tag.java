@@ -29,5 +29,9 @@ public class Tag {
 	public void TagString() {
 		System.out.println(id);
 	}
+	
+	public int getTagId() {
+		return id;
+	}
 
 }

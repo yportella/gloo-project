@@ -6,7 +6,6 @@ public class Path {
 	private int indNext = 0;
 	private final static int TAILLE_MAX = 30;
 	private Tag tag;
-	private Direction[] directions = new Direction[] {};
 
 	public Path(Tag tag) {
 		cells = new Cell[TAILLE_MAX];
@@ -24,7 +23,6 @@ public class Path {
 		Cell neighbor = last.getNeighbor(dir);
 		boolean res = neighbor.accept(this);
 		if (res) {
-			directions[indNext] = dir;
 			this.addCell(neighbor);
 		}
 		return res;
@@ -42,8 +40,8 @@ public class Path {
 		tag.TagString();
 	}
 	
-	public Direction[] getDirections() {
-		return directions;
+	public int getTagId() {
+		return tag.getTagId();
 	}
 
 }

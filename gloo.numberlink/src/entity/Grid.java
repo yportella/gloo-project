@@ -92,8 +92,5 @@ public class Grid {
 		}
     }
     
-    public Direction[] getDirections(int tag) {
-    	
-    }
 
 }
