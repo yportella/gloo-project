@@ -64,4 +64,16 @@ public class Cell {
 	public void setEnd(End end) {
 		this.end = end;
 	}
+	
+	public void setPath(Path path) {
+		this.path = path;
+	}
+	
+	public void CellString() {
+		if (path == null) {
+			System.out.println("null");
+		} else {
+			path.PathString();
+		}
+	}
 }

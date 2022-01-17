@@ -23,5 +23,9 @@ public class Tag {
 	public boolean equals(Tag t) {
 		return (id == t.id);
 	}
+	
+	public void TagString() {
+		System.out.println(id);
+	}
 
 }

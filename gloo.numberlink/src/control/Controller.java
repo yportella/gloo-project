@@ -2,6 +2,9 @@ package control;
 
 import entity.Grid;
 import entity.Path;
+
+import java.util.Arrays;
+
 import entity.Direction;
 
 public class Controller implements IController {
@@ -27,8 +30,17 @@ public class Controller implements IController {
 
 	@Override
 	public boolean action(Direction direction) {
-		currentPath.advance(direction);  
+		boolean adv = currentPath.advance(direction); 
+		if (!adv){
+			System.out.println("On ne peut pas avancer");
+		}
 		boolean res = grid.isFinished();
+		if (res) {
+			System.out.println("Gagné !");
+		} else {
+			System.out.println("Pas encore gagné !");
+		}
+		grid.GridString();
 		return res;
     }
 
@@ -44,17 +56,18 @@ public class Controller implements IController {
 
 	@Override
 	public int getNbTags() {
-	    return 1;
+	    return 6;
 	    }
 
 	@Override
 	public int[] getStartPathPosition( int tag ) {
 	    return switch( tag ) {
 	        case 0 -> new int[] { 0, 0 };
-	        case 1 -> new int[] { 1, 4 };
+	        case 1 -> new int[] { 5, 0 };
 	        case 2 -> new int[] { 1, 2 };
-	        case 3 -> new int[] { 0, 2 };
-	        case 4 -> new int[] { 0, 4 };
+	        case 3 -> new int[] { 4, 1 };
+	        case 4 -> new int[] { 4, 2 };
+	        case 5 -> new int[] { 2, 2 };
 	        default -> null;
 	        };
 	    }
@@ -62,11 +75,12 @@ public class Controller implements IController {
 	@Override
 	public int[] getSecondEndPosition( int tag ) {
 	    return switch( tag ) {
-	        case 0 -> new int[] { 1, 1 };
-	        case 1 -> new int[] { 4, 3 };
-	        case 2 -> new int[] { 4, 2 };
-	        case 3 -> new int[] { 3, 1 };
-	        case 4 -> new int[] { 3, 3 };
+	        case 0 -> new int[] { 4, 0 };
+	        case 1 -> new int[] { 4, 4 };
+	        case 2 -> new int[] { 2, 3 };
+	        case 3 -> new int[] { 3, 2 };
+	        case 4 -> new int[] { 1, 4 };
+	        case 5 -> new int[] { 5, 5 };
 	        default -> null;
 	        };
 	    }
@@ -75,10 +89,11 @@ public class Controller implements IController {
 	public Direction[] getDirections( int tag ) {
 	    return switch( tag ) {
 	        case 0 -> new Direction[] {};
-	        case 1 -> new Direction[] { Direction.DOWN, Direction.DOWN, Direction.DOWN };
-	        case 2 -> new Direction[] { Direction.DOWN, Direction.DOWN };
-	        case 3 -> new Direction[] { Direction.LEFT };
-	        case 4 -> new Direction[] { Direction.LEFT, Direction.DOWN, Direction.DOWN };
+	        case 1 -> new Direction[] {};
+	        case 2 -> new Direction[] {};
+	        case 3 -> new Direction[] {};
+	        case 4 -> new Direction[] {};
+	        case 5   -> new Direction[] {};
 	        default -> null;
 	        };
 	    }

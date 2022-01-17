@@ -43,7 +43,8 @@ public class Grid {
 			column = cell.getColumn()+1;
 		}
 		try {
-			return new Cell(cell.getGrid(), line, column);
+			Grid grid = cell.getGrid();
+			return grid.cells[line][column];
 			}
 		catch (Exception e) {
 			System.out.println("Case en dehors de la grille");
@@ -77,6 +78,18 @@ public class Grid {
     
     public void setCells(Cell[][] cells) {
     	this.cells = cells;
+    }
+    
+    public Cell[][] getCells() {
+    	return cells;
+    }
+    
+    public void GridString(){
+    	for (int i = 0; i < nbLines; i++) {
+			for (int j = 0; j < nbColumns; j++) {
+				cells[i][j].CellString();				
+			}
+		}
     }
 
 }

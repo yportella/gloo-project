@@ -14,19 +14,14 @@ public class Path {
 	
 	public void addCell(Cell cell) {
 		cells[indNext] = cell;
+		cells[indNext].setPath(this);
 		indNext++;
 	}
 	
 	public boolean advance(Direction dir) {
 		Cell last = this.getLastCell();
 		Cell neighbor = last.getNeighbor(dir);
-		boolean res;
-		try {
-			res = neighbor.accept(this);
-			}
-		catch (Exception e){
-			res = false;
-		}
+		boolean res = neighbor.accept(this);
 		if (res) {
 			this.addCell(neighbor);
 		}
@@ -39,6 +34,10 @@ public class Path {
 	
 	public Tag getTag() {
 		return tag;
+	}
+	
+	public void PathString() {
+		tag.TagString();
 	}
 
 }
