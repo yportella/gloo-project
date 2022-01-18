@@ -5,7 +5,6 @@ import javax.swing.SwingUtilities;
 
 import entity.Cell;
 import entity.Grid;
-import entity.Path;
 import entity.Tag;
 import control.Controller;
 import entity.End;
@@ -19,6 +18,7 @@ public class Main implements Runnable {
 
 	@Override
 	public void run() {
+		
 		Grid grid = new Grid(6,6);
 		Cell cell00 = new Cell(grid,0,0);
 		Cell cell01 = new Cell(grid,0,1);
@@ -92,6 +92,7 @@ public class Main implements Runnable {
 			{cell30, cell31, cell32, cell33, cell34, cell35},
 			{cell40, cell41, cell42, cell43, cell44, cell45},
 			{cell50, cell51, cell52, cell53, cell54, cell55}});
+		
 		Controller myController = new Controller(grid);
 		NumberlinkWindow myWindow = new NumberlinkWindow(myController);
 	}

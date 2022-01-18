@@ -17,4 +17,5 @@ public class End {
 	public boolean sameTag(Tag t) {
 		return tag.equals(t);
 	}
+
 }
