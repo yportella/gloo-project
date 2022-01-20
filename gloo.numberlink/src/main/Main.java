@@ -94,6 +94,13 @@ public class Main implements Runnable {
 			{cell50, cell51, cell52, cell53, cell54, cell55}});
 		
 		Controller myController = new Controller(grid);
+		myController.setPositions(0, 0, 0, 4, 0);
+		myController.setPositions(1, 5, 0, 4, 4);
+		myController.setPositions(2, 1, 2, 2, 3);
+		myController.setPositions(3, 4, 1, 3, 2);
+		myController.setPositions(4, 4, 2, 1, 4);
+		myController.setPositions(5, 2, 2, 5, 5);
+		
 		NumberlinkWindow myWindow = new NumberlinkWindow(myController);
 	}
 
