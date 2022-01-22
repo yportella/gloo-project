@@ -16,6 +16,9 @@ public class Tag {
 		this.e2 = e2;
 	}
 	
+	/*
+	 * Creates a new path with the current tag.
+	 */
 	public Path createNewPath() {
 		Path path = new Path(this);
 		this.path = path;

@@ -37,6 +37,9 @@ public class Cell {
 		return path;
 	}
 	
+	/*
+	 * Creates and returns a new path and adds the current cell to it.
+	 */
 	public Path createNewPath() {
 		Path newPath = end.createNewPath();
 		newPath.addCell(this);
@@ -44,10 +47,18 @@ public class Cell {
 		return newPath;
 	}
 	
+	/*
+	 * Returns the neighbor cell in a given direction. Throws an exception if it does not exist in the grid.
+	 * @dir The direction in which we look for the neighbor
+	 */
 	public Cell getNeighbor(Direction dir) {
 		return grid.getNeighbor(this, dir);
 	}
 	
+	/*
+	 * Returns a boolean indicating whether or not the current cell can accept path p
+	 * @p The path we want to put our cell in
+	 */
 	public boolean accept(Path p) {
 		if (end == null){
 			return (path == null);
@@ -57,6 +68,9 @@ public class Cell {
 		}
 	}
 	
+	/*
+	 * Returns a boolean indicating if the current cell is a path.
+	 */
 	public boolean hasPath() {
 		return !(path == null);
 	}

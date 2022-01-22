@@ -14,6 +14,10 @@ public class End {
 		return tag.createNewPath();
 	}
 	
+	/*
+	 * Checks if the current tag is equal to the argument.
+	 * @t The tag we want to compare with the current one.
+	 */
 	public boolean sameTag(Tag t) {
 		return tag.equals(t);
 	}

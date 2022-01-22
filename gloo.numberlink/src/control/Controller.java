@@ -9,13 +9,20 @@ public class Controller implements IController {
 	
 	private Grid grid;
 	private Path currentPath;
-	private Direction[][] directions = new Direction[getNbTags()][];
-	private int[][][] positions = new int [getNbTags()][][];
+	private Direction[][] directions;
+	private int[][][] positions;
 	
 	public Controller(Grid grid) {
 		this.grid = grid;
+		directions = new Direction[getNbTags()][];
+		positions = new int [getNbTags()][][];
 	}
 	
+	/*
+	 * Tries if a path exists or can be created from a cell. Throws an exception if not.
+	 * @line The line index of the cell the user clicked on
+	 * @column The column index of the cell the user clicked on
+	 */
 	@Override
 	public boolean clickCell(int line, int column) {
 		try {
@@ -29,7 +36,11 @@ public class Controller implements IController {
 		}
 	}
 
-
+	/*
+	 * Function activated when the user presses a key to move in a direction. Throws an exception is the
+	 * movement is not possible.
+	 * @direction The direction we want to move in.
+	 */
 	@Override
 	public boolean action(Direction direction) {
 		boolean adv = currentPath.advance(direction); 
@@ -47,17 +58,17 @@ public class Controller implements IController {
 	@Override
 	public int getNbLines() {
 		return grid.getNbLines();
-		}
+	}
 
 	@Override
 	public int getNbColumns() {
 	    return grid.getNbColumns();
-	    }
+	}
 
 	@Override
 	public int getNbTags() {
-	    return 6;
-	    }
+	    return grid.getNbTags();
+	}
 
 	@Override
 	public int[] getStartPathPosition( int tag ) {
@@ -81,6 +92,11 @@ public class Controller implements IController {
 		directions[tagId] = updateDir(directions[tagId],dir);	
 	}
 	
+	/*
+	 * Updates the list of directions by adding the one given in argument.
+	 * @directions The current list of directions.
+	 * @dir The direction we wnt to add in the list.
+	 */
 	private Direction[] updateDir(Direction[] directions, Direction dir) {
 		int n = directions.length;
 		Direction[] newDir = new Direction[n+1];

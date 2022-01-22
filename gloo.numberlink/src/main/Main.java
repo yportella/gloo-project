@@ -19,7 +19,7 @@ public class Main implements Runnable {
 	@Override
 	public void run() {
 		
-		Grid grid = new Grid(6,6);
+		Grid grid = new Grid(6,6,6);
 		Cell cell00 = new Cell(grid,0,0);
 		Cell cell01 = new Cell(grid,0,1);
 		Cell cell02 = new Cell(grid,0,2);

@@ -12,12 +12,21 @@ public class Path {
 		this.tag = tag;
 	}
 	
+	/*
+	 * Adds a new cell to the path.
+	 * @cell The cell we want to add.
+	 */
 	public void addCell(Cell cell) {
 		cells[indNext] = cell;
 		cells[indNext].setPath(this);
 		indNext++;
 	}
 	
+	/*
+	 * Returns a boolean indicating whether or not the path can advance in direction dir. If it is the case, it
+	 * also adds the corresponding cell.
+	 * @dir The directio we want to move in.
+	 */
 	public boolean advance(Direction dir) {
 		Cell last = this.getLastCell();
 		Cell neighbor = last.getNeighbor(dir);

@@ -4,12 +4,14 @@ public class Grid {
 	
 	private int nbLines;
 	private int nbColumns;
+	private int nbTags;
 	private Cell[][] cells;
 	
 
-	public Grid(int nbLines, int nbColumns) {
+	public Grid(int nbLines, int nbColumns, int nbTags) {
 		this.nbLines = nbLines;
 		this.nbColumns = nbColumns;
+		this.nbTags = nbTags;
 		this.cells = new Cell[nbLines][nbColumns];
 	}
 	
@@ -22,6 +24,11 @@ public class Grid {
 		return cells[indLine][indColumn].createNewPath();
 	}
 	
+	/*
+	 * Returns the neighbor cell in a given direction. Throws an exception if it does not exist in the grid.
+	 * @cell The cell around which we look for the neighbor
+	 * @dir The direction in which we look for the neighbor
+	 */
 	public Cell getNeighbor(Cell cell, Direction dir) {
 		int line = 0;
 		int column = 0;
@@ -52,6 +59,9 @@ public class Grid {
 		}
 	}
 	
+	/*
+	 * Returns a boolean indicating whether or not the game is finished.
+	 */
 	public boolean isFinished() {
 		for (int i = 0; i < nbLines; i++) {
 			for (int j = 0; j < nbColumns; j++) {
@@ -70,6 +80,10 @@ public class Grid {
 
     public int getNbColumns() {
     	return nbColumns;
+    }
+    
+    public int getNbTags() {
+    	return nbTags;
     }
     
     public Path getCellPath(int indLine, int indColumn) {
