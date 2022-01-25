@@ -9,12 +9,16 @@ public class Cell {
 	private Path path = null;
 
 	public Cell(Grid grid, int line, int column) {
+		if (line < 0 || line > grid.getNbLines() - 1) throw new IllegalArgumentException("Cell is out of bounds");
+		if (column < 0 || column > grid.getNbColumns() - 1) throw new IllegalArgumentException("Cell is out of bounds");
 		this.grid = grid;
 		this.line = line;
 		this.column = column;
 	}
 	
 	public Cell(Grid grid, int line, int column, End end) {
+		if (line < 0 || line > grid.getNbLines() - 1) throw new IllegalArgumentException("Cell is out of bounds");
+		if (column < 0 || column > grid.getNbColumns() - 1) throw new IllegalArgumentException("Cell is out of bounds");
 		this.grid = grid;
 		this.line = line;
 		this.column = column;
@@ -89,5 +93,17 @@ public class Cell {
 		} else {
 			path.PathString();
 		}
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if( this == obj ) return true;
+        if( obj == null ) return false;
+        if( getClass() != obj.getClass() ) return false;
+        Cell other = ( Cell ) obj;
+        if (grid != other.grid) return false;
+        if (line != other.line) return false;
+        if (column != other.column) return false;
+        return true;
 	}
 }
