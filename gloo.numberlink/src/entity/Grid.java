@@ -97,14 +97,4 @@ public class Grid {
     public Cell[][] getCells() {
     	return cells;
     }
-    
-    public void GridString(){
-    	for (int i = 0; i < nbLines; i++) {
-			for (int j = 0; j < nbColumns; j++) {
-				cells[i][j].CellString();				
-			}
-		}
-    }
-    
-
 }

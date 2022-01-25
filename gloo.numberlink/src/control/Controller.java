@@ -51,7 +51,6 @@ public class Controller implements IController {
 			System.out.println("On ne peut pas avancer");
 		}
 		boolean res = grid.isFinished();
-		grid.GridString();
 		return res;
     }
 

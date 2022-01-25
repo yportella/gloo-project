@@ -16,15 +16,6 @@ public class Cell {
 		this.column = column;
 	}
 	
-	public Cell(Grid grid, int line, int column, End end) {
-		if (line < 0 || line > grid.getNbLines() - 1) throw new IllegalArgumentException("Cell is out of bounds");
-		if (column < 0 || column > grid.getNbColumns() - 1) throw new IllegalArgumentException("Cell is out of bounds");
-		this.grid = grid;
-		this.line = line;
-		this.column = column;
-		this.end = end;
-	}
-	
 	public Grid getGrid() {
 		return grid;
 	}
@@ -85,14 +76,6 @@ public class Cell {
 	
 	public void setPath(Path path) {
 		this.path = path;
-	}
-	
-	public void CellString() {
-		if (path == null) {
-			System.out.println("null");
-		} else {
-			path.PathString();
-		}
 	}
 	
 	@Override
