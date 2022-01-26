@@ -1,7 +1,5 @@
 package control;
 
-import entity.Direction;
-
 /**
  * Contrôleur bouchon pour tester l'IHM du jeu Numberlink 
  * 

@@ -3,8 +3,6 @@ package control;
 import entity.Grid;
 import entity.Path;
 
-import entity.Direction;
-
 public class Controller implements IController {
 	
 	private Grid grid;
@@ -47,8 +45,6 @@ public class Controller implements IController {
 		if (adv) {
 			int tagId = currentPath.getTagId();
 			updateDirections(tagId, direction);
-		} else {
-			System.out.println("On ne peut pas avancer");
 		}
 		boolean res = grid.isFinished();
 		return res;

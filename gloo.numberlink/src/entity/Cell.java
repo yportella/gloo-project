@@ -1,5 +1,7 @@
 package entity;
 
+import control.Direction;
+
 public class Cell {
 	
 	private Grid grid;

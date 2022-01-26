@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import control.Direction;
 import entity.Cell;
 import entity.Grid;
-import entity.Direction;
 
 class TestGrid {
 
@@ -20,8 +20,8 @@ class TestGrid {
 	void testCorrectNeighbor1() {
 		Grid grid = new Grid(2,2,1);
 		Cell cell1 = new Cell(grid, 0, 0);
-		Cell cell2 = new Cell(grid, 1, 0);
-		Cell cell3 = new Cell(grid, 0, 1);
+		Cell cell2 = new Cell(grid, 0, 1);
+		Cell cell3 = new Cell(grid, 1, 0);
 		Cell cell4 = new Cell(grid, 1, 1);
 		grid.setCells(new Cell[][] {{cell1, cell2},{cell3,cell4}});
 		assertEquals(grid.getNeighbor(cell1, Direction.DOWN), cell3);
@@ -31,8 +31,8 @@ class TestGrid {
 	void testCorrectNeighbor2() {
 		Grid grid = new Grid(2,2,1);
 		Cell cell1 = new Cell(grid, 0, 0);
-		Cell cell2 = new Cell(grid, 1, 0);
-		Cell cell3 = new Cell(grid, 0, 1);
+		Cell cell2 = new Cell(grid, 0, 1);
+		Cell cell3 = new Cell(grid, 1, 0);
 		Cell cell4 = new Cell(grid, 1, 1);
 		grid.setCells(new Cell[][] {{cell1, cell2},{cell3,cell4}});
 		assertEquals(grid.getNeighbor(cell1, Direction.RIGHT), cell2);
@@ -42,8 +42,8 @@ class TestGrid {
 	void testCorrectNeighbor3() {
 		Grid grid = new Grid(2,2,1);
 		Cell cell1 = new Cell(grid, 0, 0);
-		Cell cell2 = new Cell(grid, 1, 0);
-		Cell cell3 = new Cell(grid, 0, 1);
+		Cell cell2 = new Cell(grid, 0, 1);
+		Cell cell3 = new Cell(grid, 1, 0);
 		Cell cell4 = new Cell(grid, 1, 1);
 		grid.setCells(new Cell[][] {{cell1, cell2},{cell3,cell4}});
 		assertEquals(grid.getNeighbor(cell4, Direction.LEFT), cell3);
@@ -53,8 +53,8 @@ class TestGrid {
 	void testCorrectNeighbor4() {
 		Grid grid = new Grid(2,2,1);
 		Cell cell1 = new Cell(grid, 0, 0);
-		Cell cell2 = new Cell(grid, 1, 0);
-		Cell cell3 = new Cell(grid, 0, 1);
+		Cell cell2 = new Cell(grid, 0, 1);
+		Cell cell3 = new Cell(grid, 1, 0);
 		Cell cell4 = new Cell(grid, 1, 1);
 		grid.setCells(new Cell[][] {{cell1, cell2},{cell3,cell4}});
 		assertEquals(grid.getNeighbor(cell4, Direction.UP), cell2);

@@ -1,5 +1,7 @@
 package entity;
 
+import control.Direction;
+
 public class Path {
 	
 	private Cell[] cells;
@@ -25,11 +27,14 @@ public class Path {
 	/*
 	 * Returns a boolean indicating whether or not the path can advance in direction dir. If it is the case, it
 	 * also adds the corresponding cell.
-	 * @dir The directio we want to move in.
+	 * @dir The direction we want to move in.
 	 */
 	public boolean advance(Direction dir) {
 		Cell last = this.getLastCell();
 		Cell neighbor = last.getNeighbor(dir);
+		if (neighbor == null) {
+			return false;
+		}
 		boolean res = neighbor.accept(this);
 		if (res) {
 			this.addCell(neighbor);
@@ -37,16 +42,12 @@ public class Path {
 		return res;
 	}
 	
-	private Cell getLastCell() {
+	public Cell getLastCell() {
 		return this.cells[indNext-1];
 	}
 	
 	public Tag getTag() {
 		return tag;
-	}
-	
-	public void PathString() {
-		tag.TagString();
 	}
 	
 	public int getTagId() {

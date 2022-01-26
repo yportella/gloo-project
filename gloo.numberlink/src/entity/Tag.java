@@ -2,8 +2,7 @@ package entity;
 
 public class Tag {
 	
-	private End e1;
-	private End e2;
+	private End[] e;
 	private int id;
 	private Path path;
 
@@ -12,8 +11,8 @@ public class Tag {
 	}
 	
 	public void setEnds(End e1, End e2) {
-		this.e1 = e1;
-		this.e2 = e2;
+		this.e[0] = e1;
+		this.e[1] = e2;
 	}
 	
 	/*
@@ -27,10 +26,6 @@ public class Tag {
 	
 	public boolean equals(Tag t) {
 		return (id == t.id);
-	}
-	
-	public void TagString() {
-		System.out.println(id);
 	}
 	
 	public int getTagId() {

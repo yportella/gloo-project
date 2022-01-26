@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 import javax.swing.JPanel;
 
-import entity.Direction;
+import control.Direction;
 import control.IController;
 
 /**

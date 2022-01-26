@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import entity.Direction;
+import control.Direction;
 import control.IController;
 
 /**

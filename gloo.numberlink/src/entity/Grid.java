@@ -1,5 +1,7 @@
 package entity;
 
+import control.Direction;
+
 public class Grid {
 	
 	private int nbLines;
@@ -54,7 +56,6 @@ public class Grid {
 			return grid.cells[line][column];
 			}
 		catch (Exception e) {
-			System.out.println("Case en dehors de la grille");
 			return null;
 		}
 	}
