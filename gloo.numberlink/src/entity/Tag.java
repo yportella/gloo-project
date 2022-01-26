@@ -2,7 +2,7 @@ package entity;
 
 public class Tag {
 	
-	private End[] e;
+	private End[] e = new End[2];
 	private int id;
 	private Path path;
 
@@ -30,6 +30,10 @@ public class Tag {
 	
 	public int getTagId() {
 		return id;
+	}
+
+	public End[] getEnds() {
+		return e;
 	}
 
 }

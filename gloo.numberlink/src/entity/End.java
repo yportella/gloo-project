@@ -22,4 +22,12 @@ public class End {
 		return tag.equals(t);
 	}
 
+	public Tag getTag() {
+		return tag;
+	}
+
+	public Cell getCell() {
+		return cell;
+	}
+
 }
